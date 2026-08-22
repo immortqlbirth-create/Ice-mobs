@@ -18,17 +18,15 @@ jobs:
         java-version: '21'
         distribution: 'temurin'
     
-    - name: Debug
-      run: ls -la && pwd && cat settings.gradle
-    
     - name: Build with Gradle
       uses: gradle/gradle-build-action@v3
       with:
         gradle-version: 8.14
+        build-root-directory: Auto-Attack-Modified
         arguments: clean build -x test
     
     - name: Upload JAR
       uses: actions/upload-artifact@v4
       with:
         name: Ice-JAR
-        path: fabric/build/libs/*.jar
+        path: Auto-Attack-Modified/fabric/build/libs/*.jar
