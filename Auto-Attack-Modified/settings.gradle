@@ -16,7 +16,5 @@ dependencyResolutionManagement {
 }
 
 rootProject.name = 'auto_attack'
-
 include 'common'
 include 'fabric'
-include 'neoforge'
