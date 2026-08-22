@@ -1,10 +1,10 @@
 name: Build Ice Mod
-
+ 
 on:
   push:
     branches: [ main ]
   workflow_dispatch:
-
+ 
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -29,3 +29,4 @@ jobs:
       with:
         name: Ice-JAR
         path: Auto-Attack-Modified/fabric/build/libs/*.jar
+ 
