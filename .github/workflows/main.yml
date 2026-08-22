@@ -1,10 +1,10 @@
 name: Build Ice Mod
- 
+
 on:
   push:
     branches: [ main ]
   workflow_dispatch:
- 
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -12,7 +12,7 @@ jobs:
     steps:
     - uses: actions/checkout@v4
     
-       - name: Set up JDK 25
+    - name: Set up JDK 25
       uses: actions/setup-java@v4
       with:
         java-version: '25'
@@ -29,5 +29,3 @@ jobs:
       with:
         name: Ice-JAR
         path: Auto-Attack-Modified/fabric/build/libs/*.jar
- 
-
