@@ -16,7 +16,7 @@ jobs:
     - name: Build with Gradle
       uses: gradle/gradle-build-action@v3
       with:
-        gradle-version: 8.15
+        gradle-version: 8.13
         build-root-directory: Auto-Attack-Modified
         arguments: clean build -x test -x :neoforge:build
     - name: Upload JAR
