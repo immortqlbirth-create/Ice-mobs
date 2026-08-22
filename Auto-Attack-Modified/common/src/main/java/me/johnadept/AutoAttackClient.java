@@ -4,7 +4,7 @@ import me.johnadept.config.AutoAttackConfig;
 import net.minecraft.client.gui.components.EditBox;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.network.chat.Component;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.util.Identifier;
 import net.minecraft.world.entity.EntityType;
 import org.jetbrains.annotations.NotNull;
 import org.slf4j.Logger;
@@ -28,7 +28,7 @@ public final class AutoAttackClient {
             return Optional.of(Component.translatable("menu.auto_attack.config.entity_id.empty"));
         }
         try {
-            ResourceLocation id = ResourceLocation.tryParse(str);
+            Identifier id = Identifier.tryParse(str);
             if (id == null) {
                 return Optional.of(Component.translatable("menu.auto_attack.config.entity_id.invalid_format"));
             }
@@ -46,7 +46,7 @@ public final class AutoAttackClient {
         if (baseValidation.isPresent()) {
             return baseValidation;
         }
-        ResourceLocation id = ResourceLocation.tryParse(str);
+        Identifier id = Identifier.tryParse(str);
         if (id.equals(BuiltInRegistries.ENTITY_TYPE.getKey(EntityType.PLAYER))) {
             return Optional.of(Component.translatable("menu.auto_attack.config.entity_id.disallowed_player"));
         }
