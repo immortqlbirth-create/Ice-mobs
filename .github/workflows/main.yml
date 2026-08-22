@@ -19,10 +19,16 @@ jobs:
         distribution: 'temurin'
     
     - name: Build with Gradle
-  uses: gradle/gradle-build-action@v3
-  with:
-    gradle-version: 8.14
-    arguments: clean build -x test
+      uses: gradle/gradle-build-action@v3
+      with:
+        gradle-version: 8.14
+        arguments: clean build -x test
+    
+    - name: Upload JAR
+      uses: actions/upload-artifact@v4
+      with:
+        name: Ice-JAR
+        path: fabric/build/libs/*.jar
     
     - name: Upload JAR
       uses: actions/upload-artifact@v4
