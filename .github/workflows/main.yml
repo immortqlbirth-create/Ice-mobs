@@ -1,10 +1,10 @@
 name: Build Ice Mod
-
+ 
 on:
   push:
     branches: [ main ]
   workflow_dispatch:
-
+ 
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -23,10 +23,11 @@ jobs:
       with:
         gradle-version: 8.14
         build-root-directory: Auto-Attack-Modified
-        arguments: clean build -x test
+        arguments: clean build -x test -x :neoforge:build
     
     - name: Upload JAR
       uses: actions/upload-artifact@v4
       with:
         name: Ice-JAR
         path: Auto-Attack-Modified/fabric/build/libs/*.jar
+ 
